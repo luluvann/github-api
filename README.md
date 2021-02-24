@@ -15,5 +15,3 @@ This web app's purpose is to list all the public Github repos for a specified Gi
 
 ## Deployed app
 [https://luluvann.github.io/github-api/]
-
-

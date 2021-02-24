@@ -1,10 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import ListGroup from "react-bootstrap/ListGroup"
 
 function App() {
 
@@ -28,16 +25,14 @@ function App() {
 
     return (
       <div>
-        <div>List public repos for a specific github user</div>
-        <Form.Group>
-          <Form.Control placeholder="username" onChange={handleChange} value={userName}></Form.Control>
-        </Form.Group>
-        <Button onClick={clickHandler}>Submit</Button>
-        <ListGroup variant="flush">
-          <ul>
-            {repos.map( (element,i) => <li key={i}>{element.name} developed in {element.language}</li>)}
-          </ul>
-        </ListGroup>
+        <h3>List public repos for a specific github user</h3>
+        <div class="container">
+        <input placeholder="username" onChange={handleChange} value={userName}></input>
+        <button onClick={clickHandler}>Submit</button>
+        </div>
+        <ul>
+          {repos.map( (element,i) => <li key={i}>{element.name} developed in {element.language}</li>)}
+        </ul>
       </div>
     )
   }
