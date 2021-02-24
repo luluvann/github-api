@@ -33,13 +33,15 @@ function Element() {
   }
 
   const result = (
-    repos === undefined ? <></> : repos.length === 0 ? "No public github repos found for this user" :  
+    repos === undefined ? <></> : repos.length === 0 ? <div>No public github repos found for this user</div> :  
     repos.map((repo, i) => (
-      <li key={i}>
-        <a href={repo.html_url} target="_blank" rel="noreferrer">
-          {repo.name}
-        </a> developed in <span>{repo.language}</span>
-      </li>
+    <ul>
+        <li key={i}>
+          <a href={repo.html_url} target="_blank" rel="noreferrer">
+            {repo.name}
+          </a> developed in <span>{repo.language}</span>
+        </li>
+      </ul>
     )));
 
   return (
@@ -53,7 +55,7 @@ function Element() {
         ></input>
         <button onClick={clickHandler}>Search</button>
       </div>
-      <ul>{result}</ul>
+      {result}
     </div>
   );
 }
