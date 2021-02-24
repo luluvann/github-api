@@ -1,38 +1,39 @@
 import './App.css';
 import axios from 'axios';
 import { useState } from 'react'
-import Form from "react-bootstrap/Form";
 
 function App() {
 
   function Element(){
     const [userName, setUserName] = useState()
-    const [repos, setRepos] = useState([{name:"blah"}])
+    const [repos, setRepos] = useState([{name:""}])
 
-    function clickHandler(){
-      axios.get("https://api.github.com/users/luluvann/repos")
+    function clickHandler(e){
+    
+      axios.get(`https://api.github.com/users/${userName}/repos`)
       .then(response => {
         const repos_list = response.data
+        console.log(repos_list)
         setRepos(repos_list);
         })
       }
 
-    function handleChange(event){
-      event.preventDefault();
-      setUserName(event.target.value)
+    function handleChange(e){
+      e.preventDefault()
+      setUserName(e.target.value)
     }
       
-
     return (
       <div>
-        <h3>List public repos for a specific github user</h3>
-        <div class="container">
-        <input placeholder="username" onChange={handleChange} value={userName}></input>
-        <button onClick={clickHandler}>Submit</button>
+        <h3>List Github public repos for a user</h3>
+        <div className="container">
+        <input placeholder="username" onChange={handleChange}></input>
+        <button onClick={clickHandler}>Search</button>
         </div>
-        <ul>
-          {repos.map( (element,i) => <li key={i}>{element.name} developed in {element.language}</li>)}
-        </ul>
+        {repos ? <ul>
+          {repos.map( (element,i) => <li key={i}><a href={element.html_url}>{element.name}</a> developed in <span>{element.language}</span></li>)}
+        </ul> : <div></div>}
+        
       </div>
     )
   }
@@ -40,9 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <Element/>
-      </header>
     </div>
   );
 }
