@@ -14,3 +14,6 @@ This web app's purpose is to list all the public Github repos for a specified Gi
 - Axios [https://github.com/axios/axios]
 - ReactJS [https://reactjs.org/]
 - Gitname - Deploy React app on Github pages [https://github.com/gitname/react-gh-pages]
+
+## Preview
+![til](./src/app-preview.gif)
