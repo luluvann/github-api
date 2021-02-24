@@ -9,9 +9,6 @@
   background-color: #282c34;
   color: white;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container{
@@ -75,5 +72,18 @@ span{
 }
 
 div{
-  margin-top:40px
+  margin:10px
+}
+
+footer{
+  margin:25px
+}
+footer p{
+  font-size: x-small;
+  margin:0;
+}
+
+img{
+  height: 100px;
+  border-radius:20px
 }

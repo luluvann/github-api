@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
+import OctocatPic from "./Octocat.jpg"
 
 function Element() {
 
@@ -47,6 +48,7 @@ function Element() {
   return (
     <div>
       <h3>List Github public repos for a user</h3>
+      <img src={OctocatPic}></img>
       <div className="container">
         <input
           placeholder="username"
