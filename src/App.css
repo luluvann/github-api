@@ -62,13 +62,18 @@ li{
 }
 
 a{
-  color:white
-}
-
-span{
-  font-style: italic;
+  color:rgb(132, 200, 209)
 }
 
 a:visited{
-  color:white
+  color:rgb(132, 200, 209)
+}
+
+span{
+  color:darkcyan;
+  font-style: italic;
+}
+
+div{
+  margin-top:40px
 }
