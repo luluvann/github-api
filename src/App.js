@@ -28,7 +28,7 @@ function App() {
 
     return (
       <div>
-        <div>{userName}</div>
+        <div>List public repos for a specific github user</div>
         <Form.Group>
           <Form.Control placeholder="username" onChange={handleChange} value={userName}></Form.Control>
         </Form.Group>
